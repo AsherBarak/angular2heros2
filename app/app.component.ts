@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Hero } from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
+import { MyComponent } from './my.component';
+import {MyDirective} from './my.directive'
 
 const HEROES: Hero[] = [
   { id: 11, name: 'Mr. Nice' },
@@ -20,6 +22,7 @@ const HEROES: Hero[] = [
     selector: 'my-app',
 template:`
   <h1>{{title}}</h1>
+  <my-component *myDir='hello' ></my-component>
   <h2>My Heroes</h2>
     <ul class="heroes">
         <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
