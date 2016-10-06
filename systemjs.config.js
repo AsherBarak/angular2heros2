@@ -10,6 +10,7 @@
     },
     // map tells the System loader where to look for things
     map: {
+      'ng2-dnd': 'node_modules/ng2-dnd',
       // our app is within the app folder
       app: 'app',
 
@@ -40,7 +41,8 @@
       'angular-in-memory-web-api': {
         main: './index.js',
         defaultExtension: 'js'
-      }
+      },
+      'ng2-dnd':  { main: 'index.js',  defaultExtension: 'js' },
     }
   });
 })(this);

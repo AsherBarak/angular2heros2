@@ -2,9 +2,12 @@ import { Component } from '@angular/core';
 import { Hero } from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
 import { MyComponent } from './my.component';
+import { My2Component } from './my.2.component';
 import {MyDirective} from './my.directive'
 
-const HEROES: Hero[] = [
+import {DND_PROVIDERS, DND_DIRECTIVES} from 'ng2-dnd';
+
+const HEROES: Array<Hero> = [
   { id: 11, name: 'Mr. Nice' },
   { id: 12, name: 'Narco' },
   { id: 13, name: 'Bombasto' },
@@ -20,9 +23,58 @@ const HEROES: Hero[] = [
 
 @Component({
     selector: 'my-app',
+      //directives: [DND_DIRECTIVES],
+  providers: [DND_PROVIDERS],
 template:`
+  <style>
+.dnd-drag-start {
+    -moz-transform:scale(0.8);
+    -webkit-transform:scale(0.8);
+    transform:scale(0.8);
+    opacity:0.7;
+    border: 2px dashed #000;
+}
+
+.dnd-drag-enter {
+    opacity:0.7;
+    border: 2px dashed #000;
+}
+
+.dnd-drag-over {
+    border: 2px dashed #000;
+}
+
+.dnd-sortable-drag {
+  -moz-transform:scale(0.9);
+  -webkit-transform:scale(0.9);
+  transform:scale(0.9);
+  opacity:0.7;
+  border: 1px dashed #000;
+}
+  </style>  
+
   <h1>{{title}}</h1>
-  <my-component *myDir='hello' ></my-component>
+
+  <ul class="list-group" dnd-sortable-container [sortableData]="indecies">
+      <li *ngFor="let hero of heroes; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">
+      <my-component [name]="hero.name"></my-component>
+      </li>
+  </ul>
+  <ul >
+      <li *ngFor="let ind of indecies">
+      {{ind}}
+      </li>
+  </ul>
+
+  <ul class="list-group"  dnd-sortable-container  [sortableData]="indecies">
+    <li   class="list-group-item"  dnd-sortable [sortableIndex]="0">
+      <my-component *myDir='hello'></my-component>
+    </li>
+    <li  class="list-group-item"  dnd-sortable [sortableIndex]="1">
+      <my-2-component *myDir='hello2' ></my-2-component>
+    </li>
+  </ul>
+
   <h2>My Heroes</h2>
     <ul class="heroes">
         <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
@@ -89,7 +141,7 @@ export class AppComponent {
 selectedHero: Hero;
 
     heroes = HEROES;
-
+    indecies : Array<number>=[1,2,3,4,5,6,7,8,9,10];
 
 onSelect(hero: Hero): void {
   this.selectedHero = hero;
