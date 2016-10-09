@@ -2,7 +2,7 @@ import { ViewContainerRef,ComponentFactoryResolver ,ViewRef,
   TemplateRef,ContentChild, OnInit, ContentChildren,QueryList,
    ViewChildren,Component, Input } from '@angular/core';
 import {My2Component} from './my.2.component'; 
-import{MyDirective} from './my.directive'
+import{MyDirective} from './my.directive';
 
 @Component({
   selector: 'my-component',

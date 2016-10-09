@@ -1,12 +1,14 @@
 import { Directive, Input, TemplateRef,ViewContainerRef } from '@angular/core';
-
-@Directive({selector:"[myIndex]"})
+import {MyReorderingService} from './my.repordering.service';
+@Directive({selector:"[myIndex]",providers:[MyReorderingService]},)
 
 export class MyIndexDirective
 {
 constructor(
   private templateRef: TemplateRef<any>,
-  private viewContainer: ViewContainerRef
+  private viewContainer: ViewContainerRef,
+  private reorderingService:MyReorderingService,
+  
   ) {
 
 
@@ -14,7 +16,8 @@ constructor(
 
    @Input()
    set myIndex(input:number){
-       console.log(input);
+       this.reorderingService.log("scv "+input);
+
        //this.viewContainer.createEmbeddedView(this.templateRef);
    }
 }
