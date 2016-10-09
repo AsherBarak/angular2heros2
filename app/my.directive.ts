@@ -15,6 +15,6 @@ constructor(
    @Input()
    set myDir(input:any){
        console.log(input);
-       this.viewContainer.createEmbeddedView(this.templateRef);
+       //this.viewContainer.createEmbeddedView(this.templateRef);
    }
 }

@@ -15,6 +15,7 @@ import {DndModule} from 'ng2-dnd';
   declarations: [ AppComponent ,
     HeroDetailComponent,
     MyComponent,My2Component, MyDirective],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  entryComponents:[My2Component]
 })
 export class AppModule { }

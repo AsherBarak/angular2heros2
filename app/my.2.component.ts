@@ -9,7 +9,8 @@ import { Component, Input } from '@angular/core';
 
 })
 export class My2Component {
-constructor(){this.index=500;}
+constructor(){//this.index=500;
+  }
 
       @Input()
   index: number;

@@ -55,9 +55,22 @@ template:`
 
   <h1>{{title}}</h1>
 
+    <my-2-component *myDir='hello_12' index='12'>test</my-2-component>
+    <my-2-component *myDir='hello_13' index='13'>test</my-2-component>
+    <my-2-component *myDir='hello_14' index='14'>test</my-2-component>
+
+    <my-component name="content">
+        <my-2-component index='22'>test</my-2-component>
+        <my-2-component index='33'>test</my-2-component>
+        <my-2-component index='44'>test</my-2-component>
+        <div>content</div>
+    </my-component>
+
   <ul class="list-group" dnd-sortable-container [sortableData]="indecies">
       <li *ngFor="let hero of heroes; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">
-      <my-component [name]="hero.name"></my-component>
+      <my-component [name]="hero.name">
+        <div>content</div>
+      </my-component>
       </li>
   </ul>
   <ul >
