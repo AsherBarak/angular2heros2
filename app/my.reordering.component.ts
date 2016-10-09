@@ -8,7 +8,8 @@ import { Component, Input,ViewContainerRef } from '@angular/core';
 `
 })
 export class MyComponent {
- constructor(private viewContainerRef:ViewContainerRef){}
+ constructor(private viewContainerRef:ViewContainerRef
+ ){}
 
       @Input()
   index: number;

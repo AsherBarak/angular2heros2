@@ -6,13 +6,14 @@ import { HeroDetailComponent } from './hero-detail.component';
 import { MyComponent } from './my.component';
 import { My2Component } from './my.2.component';
 import { MyDirective } from './my.directive';
+import { MyIndexDirective } from './my.index.directive';
 import {DndModule} from 'ng2-dnd';
 
 @NgModule({
   imports: [ BrowserModule,
     FormsModule,
     DndModule.forRoot() ],
-  declarations: [ AppComponent ,
+  declarations: [ AppComponent ,MyIndexDirective,
     HeroDetailComponent,
     MyComponent,My2Component, MyDirective],
   bootstrap: [ AppComponent ],

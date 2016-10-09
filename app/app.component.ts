@@ -4,6 +4,7 @@ import { HeroDetailComponent } from './hero-detail.component';
 import { MyComponent } from './my.component';
 import { My2Component } from './my.2.component';
 import {MyDirective} from './my.directive'
+import { MyIndexDirective } from './my.index.directive';
 
 import {DND_PROVIDERS, DND_DIRECTIVES} from 'ng2-dnd';
 
@@ -55,9 +56,9 @@ template:`
 
   <h1>{{title}}</h1>
 
-    <my-2-component *myDir='hello_12' index='12'>test</my-2-component>
-    <my-2-component *myDir='hello_13' index='13'>test</my-2-component>
-    <my-2-component *myDir='hello_14' index='14'>test</my-2-component>
+    <my-2-component *myIndex='3' index='12'>test</my-2-component>
+    <my-2-component *myIndex='1' index='13'>test</my-2-component>
+    <my-2-component *myIndex='2' index='14'>test</my-2-component>
 
     <my-component name="content">
         <my-2-component index='22'>test</my-2-component>
