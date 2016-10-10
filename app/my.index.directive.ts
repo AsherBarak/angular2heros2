@@ -1,6 +1,9 @@
 import { Directive, Input, TemplateRef,ViewContainerRef } from '@angular/core';
 import {MyReorderingService} from './my.repordering.service';
-@Directive({selector:"[myIndex]",providers:[MyReorderingService]},)
+
+@Directive({
+    selector:"[myIndex]",
+    },)
 
 export class MyIndexDirective
 {
@@ -17,6 +20,7 @@ constructor(
    @Input()
    set myIndex(input:number){
        this.reorderingService.log("scv "+input);
+       this.reorderingService.registerContentElement(this.templateRef,this.viewContainer,input);
 
        //this.viewContainer.createEmbeddedView(this.templateRef);
    }

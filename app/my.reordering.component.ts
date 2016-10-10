@@ -1,21 +1,21 @@
-import { Component, Input,ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, Input,ViewContainerRef } from '@angular/core';
+import {MyReorderingService} from './my.repordering.service';
 
 @Component({
-  selector: 'my-component',
+  selector: 'my-reordering-component',
   template: `
-  <h3>My Component {{index}} {{name}}</h3>
-  
-`
+  <h3>My Reordering Component</h3>
+  `
 })
-export class MyComponent {
- constructor(private viewContainerRef:ViewContainerRef
- ){}
+export class MyReorderingComponent implements AfterViewInit {
+ constructor(private viewContainer: ViewContainerRef,
+   private reorderingService:MyReorderingService){}
 
-      @Input()
-  index: number;
+public ngAfterViewInit():void{
 
-        @Input()
-  name: string;
+this.reorderingService.renderContent(this.viewContainer);
+
+}
 
 
 }

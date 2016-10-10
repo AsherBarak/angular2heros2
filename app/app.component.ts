@@ -5,7 +5,8 @@ import { MyComponent } from './my.component';
 import { My2Component } from './my.2.component';
 import {MyDirective} from './my.directive'
 import { MyIndexDirective } from './my.index.directive';
-
+import { MyReorderingComponent } from './my.reordering.component';
+import {MyReorderingService} from './my.repordering.service';
 import {DND_PROVIDERS, DND_DIRECTIVES} from 'ng2-dnd';
 
 const HEROES: Array<Hero> = [
@@ -26,6 +27,7 @@ const HEROES: Array<Hero> = [
     selector: 'my-app',
       //directives: [DND_DIRECTIVES],
   providers: [DND_PROVIDERS],
+  
 template:`
   <style>
 .dnd-drag-start {
@@ -55,11 +57,11 @@ template:`
   </style>  
 
   <h1>{{title}}</h1>
-
-    <my-2-component *myIndex='3' index='12'>test</my-2-component>
-    <my-2-component *myIndex='1' index='13'>test</my-2-component>
-    <my-2-component *myIndex='2' index='14'>test</my-2-component>
-
+  <my-reordering-component></my-reordering-component>
+      <my-2-component *myIndex="'3'" index='13'>test</my-2-component>
+      <my-2-component *myIndex="'1'" index='11'>test</my-2-component>
+      <my-2-component *myIndex="'2'" index='12'>test</my-2-component>
+  
     <my-component name="content">
         <my-2-component index='22'>test</my-2-component>
         <my-2-component index='33'>test</my-2-component>

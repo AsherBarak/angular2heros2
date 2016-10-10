@@ -8,15 +8,18 @@ import { My2Component } from './my.2.component';
 import { MyDirective } from './my.directive';
 import { MyIndexDirective } from './my.index.directive';
 import {DndModule} from 'ng2-dnd';
+import { MyReorderingComponent } from './my.reordering.component';
+import {MyReorderingService} from './my.repordering.service';
 
 @NgModule({
   imports: [ BrowserModule,
     FormsModule,
     DndModule.forRoot() ],
   declarations: [ AppComponent ,MyIndexDirective,
-    HeroDetailComponent,
+    HeroDetailComponent, MyReorderingComponent,
     MyComponent,My2Component, MyDirective],
   bootstrap: [ AppComponent ],
-  entryComponents:[My2Component]
+  entryComponents:[My2Component],
+  providers:[MyReorderingService]
 })
 export class AppModule { }
