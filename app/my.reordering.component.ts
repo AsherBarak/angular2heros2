@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input,ViewContainerRef } from '@angular/core';
+import { AfterContentInit, OnInit, Component, Input,ViewContainerRef } from '@angular/core';
 import {MyReorderingService} from './my.repordering.service';
 
 @Component({
@@ -7,14 +7,14 @@ import {MyReorderingService} from './my.repordering.service';
   <h3>My Reordering Component</h3>
   `
 })
-export class MyReorderingComponent implements AfterViewInit {
+export class MyReorderingComponent implements AfterContentInit {
  constructor(private viewContainer: ViewContainerRef,
    private reorderingService:MyReorderingService){}
 
-public ngAfterViewInit():void{
+public ngAfterContentInit():void{
 
-this.reorderingService.renderContent(this.viewContainer);
 
+setTimeout(()=>{this.reorderingService.renderContent(this.viewContainer);})
 }
 
 

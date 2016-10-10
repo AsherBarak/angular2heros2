@@ -22,9 +22,11 @@ export class MyReorderingService {
 
   public renderContent(viewContainer: ViewContainerRef)
   {
+      console.log("presenting "+this.store.length);
       this.store.sort((a,b)=>a.index-b.index).forEach(el=>{
             console.log(el.index);
-            viewContainer.createEmbeddedView(el.template);
+            let createdView=viewContainer.createEmbeddedView(el.template);
+            
             //el.viewContainer.createEmbeddedView(el.template,null,el.index);
             //el.viewContainer.insert
         }
