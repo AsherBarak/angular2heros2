@@ -58,9 +58,9 @@ template:`
 
   <h1>{{title}}</h1>
   <my-reordering-component></my-reordering-component>
-      <my-2-component *myIndex="'3'" index='13'>test</my-2-component>
+      <my-2-component  [hero]="selectedHero" *myIndex="'3'" index='13'>test</my-2-component>
       <my-2-component *myIndex="'1'" index='11'>test</my-2-component>
-      <my-2-component *myIndex="'2'" index='12'>test</my-2-component>
+      <my-2-component *myIndex="'2'" index='12' >test</my-2-component>
   
     <my-component name="content">
         <my-2-component index='22'>test</my-2-component>
