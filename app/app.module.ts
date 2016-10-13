@@ -5,6 +5,7 @@ import { AppComponent }  from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { MyComponent } from './my.component';
 import { My2Component } from './my.2.component';
+import { MyCameraComponent } from './my.camera.component';
 import { MyDirective } from './my.directive';
 import { MyIndexDirective } from './my.index.directive';
 import {DndModule} from 'ng2-dnd';
@@ -17,7 +18,7 @@ import {MyReorderingService} from './my.repordering.service';
     DndModule.forRoot() ],
   declarations: [ AppComponent ,MyIndexDirective,
     HeroDetailComponent, MyReorderingComponent,
-    MyComponent,My2Component, MyDirective],
+    MyComponent,My2Component,MyCameraComponent, MyDirective],
   bootstrap: [ AppComponent ],
   entryComponents:[My2Component],
   providers:[MyReorderingService]

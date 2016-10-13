@@ -8,6 +8,7 @@ import { MyIndexDirective } from './my.index.directive';
 import { MyReorderingComponent } from './my.reordering.component';
 import {MyReorderingService} from './my.repordering.service';
 import {DND_PROVIDERS, DND_DIRECTIVES} from 'ng2-dnd';
+import { MyCameraComponent } from './my.camera.component';
 
 const HEROES: Array<Hero> = [
   { id: 11, name: 'Mr. Nice' },
@@ -57,6 +58,7 @@ template:`
   </style>  
 
   <h1>{{title}}</h1>
+  <my-camera-component></my-camera-component>
   <my-reordering-component></my-reordering-component>
       <my-2-component  [hero]="selectedHero" *myIndex="'3'" index='13'>test</my-2-component>
       <my-2-component *myIndex="'1'" index='11'>test</my-2-component>
