@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Hero } from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
+import { HeroDetailExpandingComponent } from './hero-detail-expanding.component';
 import { MyComponent } from './my.component';
 import { My2Component } from './my.2.component';
 import {MyDirective} from './my.directive'
@@ -96,7 +97,10 @@ template:`
   <h2>My Heroes</h2>
     <ul class="heroes">
         <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+            <!-- 
             <span class="badge">{{hero.id}}</span> {{hero.name}}
+            -->
+            <my-hero-detail-expanding [hero]=hero></my-hero-detail-expanding>
         </li>
     </ul>
     <my-hero-detail [hero]="selectedHero"></my-hero-detail>

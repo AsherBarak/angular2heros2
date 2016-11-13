@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { AppComponent }  from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
+import { HeroDetailExpandingComponent } from './hero-detail-expanding.component';
 import { MyComponent } from './my.component';
 import { My2Component } from './my.2.component';
 import { MyCameraComponent } from './my.camera.component';
@@ -17,7 +18,7 @@ import {MyReorderingService} from './my.repordering.service';
     FormsModule,
     DndModule.forRoot() ],
   declarations: [ AppComponent ,MyIndexDirective,
-    HeroDetailComponent, MyReorderingComponent,
+    HeroDetailComponent,HeroDetailExpandingComponent, MyReorderingComponent,
     MyComponent,My2Component,MyCameraComponent, MyDirective],
   bootstrap: [ AppComponent ],
   entryComponents:[My2Component],
