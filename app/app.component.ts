@@ -11,17 +11,25 @@ import {MyReorderingService} from './my.repordering.service';
 import {DND_PROVIDERS, DND_DIRECTIVES} from 'ng2-dnd';
 import { MyCameraComponent } from './my.camera.component';
 
+let h:Hero=new Hero(11,'nice','expanded');
+//{ id: 11, name: 'Mr. Nice', expansionState: 'expanded' };
+
 const HEROES: Array<Hero> = [
-  { id: 11, name: 'Mr. Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
+  new Hero(11,'nice','expanded'),
+  new Hero(12,'Narco','expanded'),
+  new Hero(13,'Bpmbas','expanded'),
+  /*
+  { id: 11, name: 'Mr. Nice', expansionState: 'expanded' },
+  { id: 12, name: 'Narco' , expansionState: 'expanded'},
+  { id: 13, name: 'Bombasto' , expansionState: 'expanded'},
+  { id: 14, name: 'Celeritas', expansionState: 'expanded' },
+  { id: 15, name: 'Magneta' , expansionState: 'expanded'},
+  { id: 16, name: 'RubberMan', expansionState: 'expanded' },
+  { id: 17, name: 'Dynama', expansionState: 'expanded' },
+  { id: 18, name: 'Dr IQ' , expansionState: 'expanded'},
+  { id: 19, name: 'Magma', expansionState: 'expanded' },
+  { id: 20, name: 'Tornado' , expansionState:'expanded'}
+  */
 ];
 
 
